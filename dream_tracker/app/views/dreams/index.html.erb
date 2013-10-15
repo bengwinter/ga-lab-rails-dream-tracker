@@ -1,0 +1,12 @@
+<h1>All Dreams</h1>
+
+  <% @dreams.each do |dream| %>
+    <h3><%= link_to dream.name, dream %></h3>
+    <h4><%= dream.description %></h4>
+    <h4><%= dream.scary %></h4>
+    <h4><%= dream.fun %></h4>
+    <%= link_to "Edit Dream", edit_dream_path(dream) %>
+    <%= link_to "Destroy Dream", dream, method: :delete, data: { confirm: 'Kill it with consciousness?' } %>
+  <% end %>
+
+<%= link_to "New Dream", new_dream_path %>
