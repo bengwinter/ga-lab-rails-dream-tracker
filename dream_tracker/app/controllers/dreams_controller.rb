@@ -1,5 +1,5 @@
 class DreamsController < ApplicationController
-  before_action :set_dream, only: [:name, :description, :scary, :fun]
+  before_action :set_dream, only: [:show, :edit, :update, :delete]
 
   def show
   end
@@ -26,7 +26,7 @@ class DreamsController < ApplicationController
 
   def update
     if @dream.update(dream_params)
-      redirect_to @dream
+      redirect_to dreams_url
     else
       render action: 'edit'
     end
